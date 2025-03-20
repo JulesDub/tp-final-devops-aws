@@ -24,7 +24,7 @@ jobs:
       run: |
         cd lambda  # Va dans le dossier contenant le code de la Lambda
         zip -r ../lambda.zip .  # Crée le fichier lambda.zip à la racine du projet
-      working-directory: ./terraform  # Change le chemin si nécessaire
+      working-directory: ./lambda  # Change le chemin si nécessaire
 
 
     - name: Terraform Apply
