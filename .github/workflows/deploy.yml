@@ -28,6 +28,15 @@ jobs:
         cd lambda  # Va dans le dossier contenant le code de la Lambda
         zip -r ../lambda.zip .  # Crée le fichier lambda.zip à la racine du projet
 
+
+
+    - name: Configurer les credentials AWS
+      run: |
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "AWS_REGION=us-east-1" >> $GITHUB_ENV  # Remplace par ta région
+
+        
     - name: Terraform Apply
       run: terraform apply -auto-approve
       working-directory: ./terraform
