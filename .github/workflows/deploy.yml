@@ -26,9 +26,6 @@ jobs:
       - name: List files after creating ZIP
         run: ls -la
 
-      - name: Verify lambda.zip exists
-        run: -f lambda.zip
-
       - name: Initialize Terraform
         run: terraform init
 
