@@ -27,7 +27,7 @@ jobs:
         run: ls -la
 
       - name: Verify lambda.zip exists
-        run: [ -f lambda.zip ]
+        run: -f lambda.zip
 
       - name: Initialize Terraform
         run: terraform init
