@@ -1,5 +1,7 @@
 provider "aws" {
-  region = "eu-west-3"
+  region                  = "us-east-1" # Remplace par ta région AWS
+  access_key              = var.AWS_ACCESS_KEY_ID
+  secret_key              = var.AWS_SECRET_ACCESS_KEY
 }
 
 resource "aws_iam_role" "lambda_exec" {
